@@ -42,3 +42,29 @@ var c = "moumouni";
 var javastring = "this is javascript and not java";
 var java = javastring.includes('java');
 console.log(java);
+
+// 9. Create a new string from a given string by changing the position of first and last characters. The string length must be greater than or equal to 2. eg. of output JavaScript => tavaScripJ
+var chang = "JavaScript";
+var retro = chang.slice(1,4);
+var retro2 = chang.slice(0,1);
+var retro3 = chang.slice(4,9);
+var retro4 = chang.slice(9);
+const retrofinal = retro4+retro+retro3+retro2;
+console.log(retrofinal);
+
+// 10. Create 3 different variables about yourself using strings as values e.g. let firstName = "Maria". Print the sentence to the console using string interpolation. e.g. of output "My name is Maria. I live in Berlin and I am a teacher". 
+let name = 'madi';
+let city = 'Berlin';
+let prof = 'web-developer'
+console.log(`my name is ${name} and im living in  ${city} working ass ${prof} `);
+
+// 11. Declare a variable and assign the value "the quick brown fox" (all in lower case). Capitalize the first letter of that string. Print the result to the console.
+console.log('=============')
+var quick ="the quick brown fox";
+    quick.charAt(1)
+    console.log(quick);
+
+var cal = 5, cal1 = 10;
+let rest = cal + cal1;
+
+
