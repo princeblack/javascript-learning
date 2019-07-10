@@ -50,4 +50,3 @@ console.log('The character at index ' + index + ' is ' + sentence.charAt(index))
 // expected output: "The character at index 4 is q"
 
 
-

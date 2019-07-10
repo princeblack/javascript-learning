@@ -32,6 +32,9 @@ console.log((x >= 10)&& (y <= 10));
 
 console.log((x * z< 100) ||(x * y > 100 ));
 
+console.log(parseInt("20", 1125));
+
+var name
 
 
 
