@@ -64,6 +64,7 @@ while (name < 1) {
         console.log(`hello ${friends4}`)  
         i += 1       
     }
-
 }
+
+
 
