@@ -326,3 +326,29 @@ let calc = function(num1, num2, CallBack){
 }
 
 console.log(calc(2,3,add));
+
+// Task : Write function that return string with capitalize the first character of the each in the string. put main logic inside getCapitalize function.
+// Usage : letterCapitalize("hello world", getCapitalize);
+// output : Hello World
+// Usage : letterCapitalize("i am stundent of the dci",getCapitalize)
+// output : I Am Student Of The Dci
+
+function letterCapitalize(params) {
+
+    if (paramas) {
+
+        return
+    }
+}
+function getCapitalize(params) {
+    params = params.split(" , ");
+    console.log(params)
+    for (let i = 0; i < params.length; i++) {
+        params[i]=params[i].charAt(0).toUpperCase() + params[i].substring(1)
+        console.log(params[i]);
+    }    
+    params = params.join('');
+    console.log(params);
+    
+}
+getCapitalize('je suis malade')
