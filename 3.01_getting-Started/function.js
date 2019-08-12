@@ -279,7 +279,7 @@ function findRepeated(params) {
     return nombre;
 }
 
-findNotRepeated("axbyazcddbexcyz",findRepeated);
+// findNotRepeated("axbyazcddbexcyz",findRepeated);
 
 function interview(job ){
     if (job == 'IBRA') {
@@ -310,8 +310,8 @@ function interview(job ){
 
 }
 
-var funCallBack = interview("designer")
-funCallBack("madi")
+// var funCallBack = interview("designer")
+// funCallBack("madi")
 
 // Another example
 
@@ -325,7 +325,7 @@ let calc = function(num1, num2, CallBack){
     return CallBack(num1,num2)
 }
 
-console.log(calc(2,3,add));
+// console.log(calc(2,3,add));
 
 // Task : Write function that return string with capitalize the first character of the each in the string. put main logic inside getCapitalize function.
 // Usage : letterCapitalize("hello world", getCapitalize);
@@ -341,14 +341,8 @@ function letterCapitalize(params) {
     }
 }
 function getCapitalize(params) {
-    params = params.split(" , ");
-    console.log(params)
-    for (let i = 0; i < params.length; i++) {
-        params[i]=params[i].charAt(0).toUpperCase() + params[i].substring(1)
-        console.log(params[i]);
-    }    
-    params = params.join('');
-    console.log(params);
-    
+    let count = '';  
 }
 getCapitalize('je suis malade')
+
+
