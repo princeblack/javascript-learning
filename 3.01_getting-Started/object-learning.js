@@ -92,5 +92,26 @@ let user2 = {
 } 
 
 console.log(user2);
-console.log(user.like birds);
-console.log(user2."like birds");
+// console.log(user.like birds);  error  , property can not be with space
+// console.log(user2."like birds"); error, property can not assign as string
+console.log(user2["like birds"]); // with bracket you can get value for the multiword
+
+let user3 ={};
+user3["like birds"] = true;
+
+// get
+console.log(user3);
+
+delete user3["like birds"];
+console.log(user3);
+
+// we can use square brackets in an object literal. that's called computed properties.
+
+let fruit = "kiwi red";
+let fruitBuchet = {
+    [fruit] : 5
+}
+console.log(fruitBuchet["kiwi red"]); // if let fruit = "kiwi red"
+console.log(fruitBuchet); // {kiwi : 5}
+
+
