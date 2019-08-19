@@ -81,3 +81,16 @@ console.log(appletree.apples[1].num);
  }
 user.isAdmin = true;
 console.log(user);
+
+delete user.age;
+console.log(user);
+
+let user2 = {
+    name : 'John',
+    age : 30,
+    "like birds" : true  // multiword property name must be quoted
+} 
+
+console.log(user2);
+console.log(user.like birds);
+console.log(user2."like birds");
