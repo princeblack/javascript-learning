@@ -74,4 +74,10 @@ console.log( appletree.apples[0].size[2]);
 // get value of the num property
 console.log(appletree.apples[1].num);
 
-// user
+// user object
+ let user = {
+     name : 'John',
+     age : 30
+ }
+user.isAdmin = true;
+console.log(user);
