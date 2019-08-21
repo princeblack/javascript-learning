@@ -234,3 +234,44 @@ console.log(values);
 
 const entries = Object.entries(fruits);
 console.log(entries);
+
+// Write a JavaScript program to list the properties of a JavaScript object.
+// Sample object:
+// var student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12 };
+// Sample Output: name,sclass,rollno
+
+console.clear()
+var student = {
+name : "David Rayy",
+sclass : "VI",
+rollno : 12 };
+
+const javaKey = Object.keys(student)
+console.log(javaKey);
+
+
+// #### 1. Check if a number is within a given range
+let num = "12";
+for (const key in student) {
+    if (student[key] == num ) {
+        console.log(student[key]);
+        
+    }
+}
+// Write a program that checks if a number is within the range of an object's min and max properties.
+// Examples:
+// * 4, { min: 0, max: 5 }) ➞ true
+// * 4, { min: 4, max: 5 }) ➞ true
+// * 4, { min: 6, max: 10 }) ➞ false
+// * 5, { min: 5, max: 5 }) ➞ true
+// * Notes: Assume min <= max is always true.
+
+let value = 4;
+
+
+
+// 1. Leap Years
+// Write a program which finds the leap years in a given range of years.
