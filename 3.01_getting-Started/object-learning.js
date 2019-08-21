@@ -323,7 +323,18 @@ let value = 4;
 ////////////////////////////////////////
                ///JSON///
 
-let response = '{"result": "true","count" : 42}';
-console.log(response);
+// let response = '{"result": "true","count" : 42}';
+// console.log(response);
 
+
+//////////////////////////////////////////
+/////////////DESTRUCTURING///////////////
+////////////////////////////////////////
+
+let arr = ['Maurice', 'Same', 'Firat', 'Flo'];
+
+let [name,test,...toi] = arr;
+console.log(name);
+console.log(test);
+console.log(toi);
 
