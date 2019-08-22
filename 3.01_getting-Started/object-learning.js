@@ -338,3 +338,24 @@ console.log(name);
 console.log(test);
 console.log(toi);
 
+let chair ={
+    color : 'black',
+    size : 'Tiny',
+    wheels : false,
+    model : 'TR2000md',
+    changeColors : function () {
+        console.log('I am yello now');
+        
+    }
+}
+
+let {size, color,...re} = chair;
+
+console.log(size);
+console.log(color);
+console.log(re);
+
+
+
+
+
