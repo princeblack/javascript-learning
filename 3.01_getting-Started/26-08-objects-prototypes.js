@@ -137,3 +137,27 @@ const baba = animalBête('baba', 23);
 const luise = animalBête('luise',8)
 luise.eat()
 
+// object prototype
+let obj ={};
+console.log(obj);
+
+// buit in prototypes : array, date,function
+let arr = [1,2,3];
+console.log(arr.__proto__=== Array.prototype);
+
+console.log(arr.__proto__.__proto__ === Object.prototype);
+console.log(arr.__proto__.__proto__.__proto__);
+console.log(arr);
+
+// Another example
+
+function f() {
+    
+};
+console.log(f.__proto__ === Function.prototype);
+console.log(f.__proto__.__proto__=== Object.prototype);
+
+
+
+
+
