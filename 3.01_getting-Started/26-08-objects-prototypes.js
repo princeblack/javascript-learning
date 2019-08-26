@@ -133,9 +133,9 @@ animalBête.prototype.play = function (length) {
 
 }
 
-const baba = animalBête('baba', 23);
-const luise = animalBête('luise',8)
-luise.eat()
+// const baba = animalBête('baba', 23);
+// const luise = animalBête('luise',8)
+// luise.eat()
 
 // object prototype
 let obj ={};
@@ -157,7 +157,36 @@ function f() {
 console.log(f.__proto__ === Function.prototype);
 console.log(f.__proto__.__proto__=== Object.prototype);
 
+// javascript array prototype constructor 
 
+Array.prototype.myTest = function () {
+    console.log('Array prototype::::::::::');
+    for (let i = 0; i < this.length; i++) {
+        this[i] =  this[i].toUpperCase();
+    }
+};
+
+var fruits = ["orange","Apple","mango","banana"]
+console.log(fruits);
+fruits.myTest();
+console.log(fruits);
+
+var testArr = ["a","b","c"];
+testArr.myTest();
+console.log(testArr);
+
+// Map  using array method
+var arr1=[2,3,9,16]
+const result = arr1.map(x=> x*2)
+console.log(result);
+
+// /with function defination
+var counter = 0;
+var newArr = arr1.map(myfunction);
+console.log(newArr);
+function myfunction(num) {
+    return num * 10;
+}
 
 
 
