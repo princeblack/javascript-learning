@@ -261,5 +261,130 @@ const averageAddInitial = euros.reduce((total,amount,index,array) =>{
     }
     
 },5);
-
 console.log(averageAddInitial);
+
+// example 4 : [29.76, 41.85, 46.5]
+const averageAddInitialArr = euros.reduce((total,amount,index,array)=>{
+    total.push(amount);
+    if (index == array.length-1) {
+        var average = 0 , temp = [];
+        for (let i = 0; i < total.length; i++) {
+            console.log("i=>" + total);
+            average += total[i];                   
+        }
+        temp.push(average / array.length);
+        return temp;
+
+    } else {
+        return total;
+    }
+}, [55]);
+console.log(averageAddInitialArr);
+
+// example 5
+const dataArr = [[1,2,3],[4,5,6],[7,8,9]];
+
+const flatValues = dataArr.reduce((total, value) =>{
+    console.log(`total : ${total} and value : ${value}`);
+    return total.concat(value);
+},[]);
+console.log(flatValues);
+
+//  Task reduce Method
+//  const fruitBasket = ['banana','cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig'];
+
+// output : {banana : 2, cherry : 3, apple : 2, fig : 1}
+
+
+const fruitBasket = ['banana','cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig'];
+
+const fruitvalue = fruitBasket.reduce((value , letter )=>{
+    if (value[letter] == undefined) {
+        value[letter]= 0;
+    } 
+    
+
+    letter[letter] == letter[letter] +1 ;
+    return value ;
+    
+},{});
+console.log(fruitvalue);
+
+// filter : array method
+
+// the filter() method creates an array filled with all array element that pass a test (provided as a function).
+// note : filter() does not execute the function for array elements without values .
+// note : filter() does not change the original array.
+
+// array.filter(function(currentValue, index,arr), thisValue)
+
+//  example 1, check adult age return all ages which is greater than 18
+var ages = [32,33,16,40];
+
+function checkAdult(age) {
+    console.log("age ==>" + age);
+    return age >= 18;    
+}
+console.log(ages.filter(checkAdult));
+
+// example 2, get all event number
+const numbers2 = [1,3,4,6,8,9]
+
+const filterValue = () =>{
+    return numbers2.filter(number => {
+        return number % 2 == 0;
+    })
+}
+console.log(filterValue());
+
+// example 3 , count fruits in basket
+var objTemp = {};
+var tempArr= fruitBasket.filter((fruit)=>{
+    objTemp[fruit] = (objTemp[fruit] || 0) +1
+});
+console.log(objTemp);
+
+const  calculateFruit = fruitBasket.reduce((basketObj, fruitParam,index,array) =>{
+    basketObj[fruitParam] = array.filter((fruit)=> (fruit === fruitParam)).length
+    return basketObj
+});
+console.log(calculateFruit);
+
+// example 4, Manipulate country data
+
+const data =[
+    {
+        country : 'China',
+        population : 13799999.999999998
+    },
+    {
+        country : 'India',
+        population : 13390000
+    },
+    {
+        country : 'USA',
+        population : 3257000
+    },
+    {
+        country : 'Germany',
+        population : 827900.0000000001
+    }
+]
+
+let newData = data.filter(item =>{
+    return item.population < 900000;
+});
+console.log(newData);
+
+//Task : Searching in an array using filter method
+//const students = ['krunal', 'ankit', 'appdividend', 'nehal', 'dhaval'];
+//return all item who has 'al' inside.
+//output :  ['krunal', 'nehal','dhaval']
+
+const students = ['krunal', 'ankit', 'appdividend', 'nehal', 'dhaval'];
+
+let includeInside = students.filter(item =>{
+    return item.includes('al')
+});
+
+console.log(includeInside);
