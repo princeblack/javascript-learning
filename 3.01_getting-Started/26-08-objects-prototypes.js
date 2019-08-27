@@ -181,12 +181,26 @@ const result = arr1.map(x=> x*2)
 console.log(result);
 
 // /with function defination
-var counter = 0;
 var newArr = arr1.map(myfunction);
 console.log(newArr);
 function myfunction(num) {
     return num * 10;
 }
 
+// example 3
+var persons =[
+    {firstName: "John", lastName: "doe"},
+    {firstName: "Jayne", lastName: "Frye"},
+    {firstName: "Sabine", lastName: "Ebert"}
+]
+console.log(persons.map(getFullName));
 
+function getFullName(item) {
+    return [item.firstName,item.lastName].join(" ")
+}
+
+// example 4
+// using var arr1=[,2,3,9,16]
+var x = arr1.map(Math.sqrt);
+console.log(x);
 
