@@ -204,3 +204,62 @@ function getFullName(item) {
 var x = arr1.map(Math.sqrt);
 console.log(x);
 
+// reduce method
+// the reduce() method reduces the array to a single value
+// the reduce() method executes a provided function for each value of the array (from left-to-right).
+// the reduce value of the function is store in an accumulator (result/total).
+// note : reduce() does not execute the function for array elements without values.
+// note : this method does  not change the original array.
+
+// array.reduce(function(total, currentValue, currentIndex,Arr), initialValue)
+
+//  example 1
+var numbers = [50,60,70,10];
+var resultOut = numbers.reduce(myReduceFunc);
+function myReduceFunc(total,num){
+    console.log(`total : ${total} and num : ${num}`);
+    return total + num;
+}
+console.log(resultOut);
+
+// example 2
+
+const euros = [29.76, 41.85, 46.5];
+console.log( euros);
+
+const average = euros.reduce((total,amount,index,array) =>{
+    console.log(`total : ${total} and amount : ${amount}`);
+    total += amount;
+
+    console.log(`total : ${ total}`);
+    
+    if (index == array.length-1) {
+        return total / array.length;
+    }else{
+        return total;
+    }
+    
+});
+
+console.log(average);
+
+// example 3
+
+console.log("::::::::with adding ititial value ::::::::::::");
+console.log( euros);
+
+const averageAddInitial = euros.reduce((total,amount,index,array) =>{
+    console.log(`total : ${total} and amount : ${amount}`);
+    total += amount;
+
+    console.log(`total : ${ total}`);
+    
+    if (index == array.length-1) {
+        return total / array.length;
+    }else{
+        return total;
+    }
+    
+},5);
+
+console.log(averageAddInitial);
