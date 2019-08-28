@@ -214,3 +214,13 @@ console.log( isInRange(4, { min: 4, max: 5 }));
  //➞ false
  console.log(isInRange(5, { min: 5, max: 5 }));
  //➞ true
+
+//  Create a function that takes a number as an argument and returns the amount of digits it has.
+
+function findDigitAmount(num) {
+    num =  num.toString()
+    return num.length
+    
+}
+console.log(findDigitAmount(123));
+findDigitAmount(123)

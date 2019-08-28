@@ -8,3 +8,5 @@ const isEven = vals.filter((num) =>{
     }
 });
 console.log(isEven);
+
+
