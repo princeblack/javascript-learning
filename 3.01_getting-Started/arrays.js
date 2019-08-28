@@ -166,3 +166,51 @@ console.log("======================================================");
 familie [5] = 'Ibrahime';
 console.log(familie);
 
+// Create a function that takes an array of numbers and return the first and last elements as a new array.
+
+function firstLast(arr) {
+    arr = [arr[0],arr[arr.length -1]];
+    return arr   
+}
+firstLast([5, 10, 15, 20, 25]) // ➞ [5, 25]
+
+// Create a function that returns the ASCII value of the passed in character.
+function ctoa(c) {
+	return c.charCodeAt()
+}
+
+ctoa("A")  //➞ 65
+
+// Write two functions:
+// toInt() : A function to convert a string to an integer.
+// toStr() : A function to convert an integer to a string.
+function toInt(str) {
+    str =parseInt(str);
+    return str
+}
+
+function toStr(int) {
+    int = String(int)
+    return int
+}
+
+toInt("77")  //➞ 77
+toStr(532)   //➞ "532"
+
+// Given a number and an object with min and max properties, return true if the number lies within the given range (inclusive).
+
+function isInRange(num, range) {
+	if (  num >=  Math.min(range.min) &&  num <= Math.max(range.max)) {
+        return true
+    }else{
+        return false
+    }
+}
+console.log(isInRange(4, { min: 0, max: 5 }));
+ //➞ true
+console.log( isInRange(4, { min: 4, max: 5 }));
+ //➞ true
+ console.log(isInRange(4, { min: 6, max: 10 }));
+ //➞ false
+ console.log(isInRange(5, { min: 5, max: 5 }));
+ //➞ true
