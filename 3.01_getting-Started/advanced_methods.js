@@ -104,7 +104,7 @@ let arr3=[
 ];
 
 arr3.sort(function (a,b) {
-    return a.age - b.age;
+    return a.age + b.age;
 })
 
 console.log(arr3);

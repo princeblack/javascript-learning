@@ -223,4 +223,5 @@ function findDigitAmount(num) {
     
 }
 console.log(findDigitAmount(123));
-findDigitAmount(123)
+
+
