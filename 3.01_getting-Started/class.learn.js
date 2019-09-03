@@ -115,3 +115,62 @@ const snoopy = new Animal2("Snoopy", 10);
 /************************************************************************************************ */
 // Task: Create a class called Person which accepts the name of a person as a string, and his / her age as a number.
 // The Person class should have a method called describe which returns a string with the following syntax: "name, age years old".So for example, if John is 19 years old then the function describe of his object will return "John, 19 years old".
+
+/**********************************encapsulation*************************/
+
+// One of the core concepts of OOP is encapsulation.
+//An important part of encapsulation is that data (object properties) should not be directly accessed or modified from outside the object.
+//To access or modify a property we would use a getter (access) or a setter (modify), which are specific methods we define in our class.
+//Currently there is no native support for private properties in JavaScript (it is possible to mimic private properties but we’re not going to go into that). So all the properties we’ve declared can be directly accessed from outside the object.
+
+//There are a few things to keep in mind when using super():
+// 1. You can only use super() in a derived class. If you try to use it in a non-derived class (a class that doesn’t use extends) or a function, it will throw an error.
+// 2 . You must call super() before accessing this in the constructor. Since super() is responsible for initializing this, attempting to access this before calling super() results in an error.
+// 3. The only way to avoid calling super() is to return an object from the class constructor.
+class User {
+    constructor(name,age,email){
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+    get name (){
+        console.log("get name :::::");
+        return this.fullName;
+    }
+    set name (newName){
+        console.log("set name :::::");
+        this.fullName = newName;
+    }
+}
+const objUser = new User("John", 30, "test@gmail.com");
+console.log(objUser.name);  // output John
+objUser.name = "test" ; // this called set name method
+console.log(objUser.name); // it called get name method
+
+
+//------------------- Inheritance ------------------------------
+//Inheritance: Classes can also inherit from other classes. The class being inherited from is called the parent, and the class inheriting from the parentis called the child. In our example, another class, let’s say Administrator, can inherit the properties and methods of the User class:
+//To create a class inheritance, use the extends keyword.
+//User class= Parent  and Administrator class = chil
+
+class Administrator extends User {
+    constructor(name,age,email,role){
+        super(name,age,email)
+        this.role = role;
+    }
+    get rolePermission(){
+        console.log("get role ::::::");
+        return this.role;
+    }
+    set rolePermission(newRole){
+        console.log(" set role :::::::");
+        this.role = newRole;
+    }
+}
+const objAdmin = new Administrator("Sara", 25,"sara@gmail.com","Admin");
+console.log(objAdmin.name);
+console.log(objAdmin.rolePermission);
+
+// hoisting
+// unlike functions, and other Javascript declarations, classe declarations are not hoisted.
+// That means that you must declare a class before you can use it .
