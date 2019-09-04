@@ -41,12 +41,29 @@ Examples:
 /*
 Write a function called vowelCount which accepts a string and returns an object with the keys as the vowel and the values as the number of times the vowel appears in the string. This function should be case insensitive so a lowercase letter and uppercase letter should count
 Examples:
+
+    
+
     vowelCount('Elie') // {e:2,i:1};
     vowelCount('Tim') // {i:1};
     vowelCount('Matt') // {a:1})
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
+
+vowelCount = ( phrase) =>{
+    let arr = phrase.toLowerCase().split('');
+    let res = {0: 0};
+    let myVowels = 'oieau';
+
+    arr.forEach(letter =>{
+        if (myVowels.indexOf(letter) !== -1) {
+            
+        } else {
+            
+        }
+    })
+}
 /////////////////////////////////////////
 /////////////////REDUCE//////////////////
 /////////////////////////////////////////
@@ -157,7 +174,7 @@ var arrays = [["1", "2", "3"],[true],[4, 5, 6]];
 const flatten = arrays.reduce((acc,val)=>{
     acc = acc.concat(val);
     return acc;
-},[])
+})
 console.log(flatten);
 console.log('::::::::::::::::::::::::::::::::::::::::');
 
@@ -193,23 +210,9 @@ function capitalizeNames (letter) {
        
  
     const res = letter.map((x)=>{
-        if (x) {
             x = x.toLowerCase()
-        }        
-        for (let i = 0; i < x.length; i++) {
-            if (x[0] == x[i][0]) {
-                x[0] = x[i][0].toUpperCase()
-                console.log(x);
-            }
-            // for (let j = 0; j < x.length; j++) {
-            //     console.log(x[i][0]);
-                
-                
-            // }
-        }
-        // console.log(x);
-        
-        
+            let res = x[0].toUpperCase() + x.substring(1);
+            console.log(res);        
     });
  
 }
@@ -375,7 +378,8 @@ function whoIsAnIlluminati(people) {
     console.log(newArray);
 
 }
-whoIsAnIlluminati(array2)
+whoIsAnIlluminati(array2);
+
 console.log('::::::::::::::::::::::::::::::::::::::::');
 
 // Filter out all the people who are not old enough to see The Matrix
