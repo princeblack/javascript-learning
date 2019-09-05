@@ -12,6 +12,9 @@ function addUp(num) {
 }
 console.log(addUp(4));
 
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+
 // Write a function that checks if two numbers are either:
 // Smaller than 0
 // Greater than 0
@@ -25,6 +28,7 @@ function both(n1, n2) {
     }
 }
 console.log(both(6,2));
+console.log("++++++++++++++++++++++++++++++++++++++");
 
 // A "truthy" value is a value that translates to true when evaluated in a Boolean context. All values are truthy unless they're defined as falsy.
 
@@ -39,21 +43,35 @@ console.log(both(6,2));
 // Create a function that takes an argument of any data type and returns 1 if it's truthy and 0 if it's falsy.
 
 function isTruthy(input) {
-	if (input == (false),(null),(undefined),(0),(0n), (NaN),(''),(""),(``)) {
-        return 0;
-    } else {
-        return 1;
-    }
+    return input ? 0 : 1;
 }
 
-console.log(isTruthy(2));
- //➞ 0
+console.log(isTruthy(2)); //➞ 0
+console.log(isTruthy(false) );//➞ 0
+console.log(isTruthy("")); //➞ 0
+console.log(isTruthy("false")); //➞ 1
+ console.log("++++++++++++++++++++++++++++++++++++++");
 
-console.log(isTruthy(false) );
-//➞ 0
+//  Create a function that checks if the argument is an integer or a string. Return int if it's an integer and str if it's a string.
 
-console.log(isTruthy(""));
- //➞ 0
+function intOrString(param) {
+    if (isNaN(param)) {
+        return "str";
+    }else {
+        return "int"
+    }
+   
+}
 
-console.log(isTruthy("false"));
- //➞ 1
+console.log(intOrString(8)); //➞ "int"
+console.log(intOrString("Hello")); //➞ "str"
+console.log(intOrString(9843532)); //➞ "int"
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+function greeting(person) {
+    var name = person ? person.name : "stranger";
+    return person ? "Howdy, " + name : "who are you, " + name 
+}
+
+console.log(greeting({name: 'Alice'}));  // "Howdy, Alice"
+console.log(greeting(null));             // "Howdy, stranger"
