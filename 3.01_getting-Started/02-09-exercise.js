@@ -62,12 +62,12 @@ function intOrString(param) {
     }
    
 }
-
 console.log(intOrString(8)); //➞ "int"
 console.log(intOrString("Hello")); //➞ "str"
 console.log(intOrString(9843532)); //➞ "int"
 console.log("++++++++++++++++++++++++++++++++++++++");
 
+// example 
 function greeting(person) {
     var name = person ? person.name : "stranger";
     return person ? "Howdy, " + name : "who are you, " + name 
@@ -75,3 +75,92 @@ function greeting(person) {
 
 console.log(greeting({name: 'Alice'}));  // "Howdy, Alice"
 console.log(greeting(null));             // "Howdy, stranger"
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+
+
+// You are given 2 out of 3 of the angles in a triangle, in degrees.
+
+// Write a function that classifies the missing angle as either "acute", "right", or "obtuse" based on its degrees.
+
+// An acute angle is one smaller than 90 degrees.
+// A right angle is one that is exactly 90 degrees.
+// An obtuse angle is one greater than 90 degrees (but smaller than 180 degrees).
+// For example: missingAngle(11, 20) should return "obtuse", since the missing angle would be 149 degrees, which makes it obtuse.
+
+function missingAngle(angle1, angle2) {
+    let triangle = 180;
+    let res = triangle - (angle1 + angle2);
+    if (res == 90 ) {
+        return "right";
+    } else if (res < 90 ){
+        return "acute" ;
+    }else{
+        return "obtuse" ;
+    }
+}
+
+console.log(missingAngle(27, 59));  // ➞ "obtuse" 
+console.log(missingAngle(135, 11)); //➞ "acute"
+console.log(missingAngle(45, 45)); //➞ "right"
+
+
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+// Create a function that takes a number (from 1 to 12) and return its corresponding month name as a string.
+
+// Months
+// January
+// February
+// March
+// April
+// May
+// June
+// July
+// August
+// September
+// October
+// November
+// December
+
+function month_name(num) {
+	let arr = ['January','February','March','April','May','June',
+        'July','August','September','October',' November', 'December'];
+        console.log(arr[num - 1]);
+        
+}
+
+month_name(3) //➞ "March"
+
+month_name(12) //➞ "December"
+
+month_name(6) //➞ "June"
+
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+
+
+
+
+
+
+
+
+
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+
+
+
+
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+
+
+
+console.log("++++++++++++++++++++++++++++++++++++++");
+
+
+
+
+console.log("++++++++++++++++++++++++++++++++++++++");
