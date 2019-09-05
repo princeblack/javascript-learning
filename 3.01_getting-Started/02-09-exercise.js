@@ -127,31 +127,34 @@ function month_name(num) {
 	let arr = ['January','February','March','April','May','June',
         'July','August','September','October',' November', 'December'];
         console.log(arr[num - 1]);
-        
-}
+}        
 
 month_name(3) //➞ "March"
-
 month_name(12) //➞ "December"
-
 month_name(6) //➞ "June"
 
 console.log("++++++++++++++++++++++++++++++++++++++");
 
+// Create a function that takes a string and returns the word count. The string will be a sentence.
 
-
-
-
-
-
-
-
+function countWords(str) {
+    str = str.split(' ')
+    console.log(str);
+    console.log(str.length);
+}
+countWords("Just an example here move along") // ➞ 6
+countWords("This is a test") //➞ 4
+countWords("What an easy task, right") //➞ 5
 
 console.log("++++++++++++++++++++++++++++++++++++++");
 
-
-
-
+// Create a function that takes a base number and an exponent number and returns the calculation.
+function calculateExponent(num, exp) {
+	console.log(Math.pow(num, exp));
+}
+calculateExponent(5, 5) //➞ 3125
+calculateExponent(10, 10) //➞ 10000000000
+calculateExponent(3, 3) //➞ 27
 
 console.log("++++++++++++++++++++++++++++++++++++++");
 
