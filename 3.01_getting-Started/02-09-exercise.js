@@ -158,12 +158,61 @@ calculateExponent(3, 3) //➞ 27
 
 console.log("++++++++++++++++++++++++++++++++++++++");
 
+// In semantic versioning a piece of software can be represented in a format like this example: 6.1.9.
 
+// The first number is the major version.
+// The second number is the minor version.
+// The third number is the patch (bug fixes).
+// Write three separate functions, one to retrieve each element in the semantic versioning specification.
+function retrieveMajor(semver) {
+    semver = semver.split('.')
+	console.log(semver[0]);
+    
+}
 
+function retrieveMinor(semver) {
+    semver = semver.split('.')
+	console.log(semver[1]);
+}
 
+function retrievePatch(semver) {
+    semver = semver.split('.')
+	console.log(semver[2]);
+}
+
+// 6.1.9
+retrieveMajor("6.1.9") //➞ "6"
+retrieveMinor("6.1.9") //➞ "1"
+retrievePatch("6.1.9") //➞ "9"
+
+// 2.1.0//
+retrieveMajor("2.1.0") //➞ "2"
+retrieveMinor("2.1.0") //➞ "1"
+retrievePatch("2.1.0") //➞ "0"
 console.log("++++++++++++++++++++++++++++++++++++++");
 
+// Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.
 
+function numberSyllables(word) {
+    word = word.split('-')
+    console.log(word.length);
+    
+}
 
-
+numberSyllables("buf-fet") //➞ 2
+numberSyllables("beau-ti-ful") //➞ 3
+numberSyllables("mon-u-men-tal") //➞ 4
+numberSyllables("on-o-mat-o-poe-ia") //➞ 6
 console.log("++++++++++++++++++++++++++++++++++++++");
+
+// Write a regular expression that matches a string if it contains at least one digit.
+
+let x = /* Fill in the regular expression */
+
+"c8" //➞ true
+
+"23cc4" //➞ true
+
+"abwekz" //➞ false
+
+"sdfkxi" //➞ false
