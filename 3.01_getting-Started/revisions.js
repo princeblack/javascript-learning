@@ -70,15 +70,35 @@ const wrapMe = () =>{
     const ageIn5Years = () =>{
         return myAge + ind ;
     }
-    console.log(ageIn5Years());
+    // console.log(ageIn5Years());
     
 })(10)
 
 let score = 0;
 while (score <= 10){
-    console.log("Walking::::....");
+    // console.log("Walking::::....");
     score+= 4 
 };
-console.log("Yah , I won!");
+// console.log("Yah , I won!");
 
+const roster = names.map((name,i) =>{
+    return `${i +1}: ${name}`
+});
+// console.log(roster);
 
+let nameList ='';
+names.forEach((name,i) => {
+    const separator = i === names.length -1 ? "" : ", ";
+    nameList += name + separator;
+});
+// console.log(nameList);
+
+//  Behind every Array.prototype.reduce... there is a forEach
+
+const nameListes = names.reduce((listString,name)=>{
+    const separator = listString.length !== 0 ? "," : "";
+    return `${listString} ${separator} ${name}`;
+},"")
+console.log(nameListes);
+
+//  so to summarize , we can see that this tree is a useful way to visualize common use 
