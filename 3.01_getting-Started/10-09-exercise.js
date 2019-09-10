@@ -163,13 +163,39 @@ removeEmptyArrays([1, 2, [], 4]);
 //  Write a function that returns true if there exists at least one number that is larger than or equal to n.
 
 function existsHigher(arr, n) {
-	
+	return arr.some(x => x >= n ? true : false)
 }
 
 existsHigher([5, 3, 15, 22, 4], 10) //➞ true
-
 existsHigher([1, 2, 3, 4, 5], 8) //➞ false
-
 existsHigher([4, 3, 3, 3, 2, 2, 2], 4) //➞ true
-
 existsHigher([], 5) //➞ false
+
+// Create a function that takes an array of hurdle heights and a jumper's jump height, and determine whether or not the hurdler can clear all the hurdles.
+
+// A hurdler can clear a hurdle if their jump height is greater than or equal to the hurdle height.
+
+function hurdleJump(hurdles, jumpHeight) {    
+	return  hurdles.every(x => x <= jumpHeight)
+}
+hurdleJump([1, 2, 3, 4, 5], 5);
+ //➞ true
+hurdleJump([5, 5, 3, 4, 5], 3);
+ //➞ false
+hurdleJump([5, 4, 5, 6], 10);
+ //➞ true
+hurdleJump([1, 2, 1], 1) //➞ false
+
+// Write a function that reverses a string. Make your function recursive.
+function reverse(str) {
+    return str.split('').reverse().join('')    
+}
+
+console.log(reverse("hello"));
+ //➞ "olleh"
+
+reverse("world") //➞ "dlrow"
+
+reverse("a") //➞ "a"
+
+reverse("") //➞ "
