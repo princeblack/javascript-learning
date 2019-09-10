@@ -190,12 +190,71 @@ hurdleJump([1, 2, 1], 1) //➞ false
 function reverse(str) {
     return str.split('').reverse().join('')    
 }
-
-console.log(reverse("hello"));
- //➞ "olleh"
-
+reverse("hello") //➞ "olleh"
 reverse("world") //➞ "dlrow"
-
 reverse("a") //➞ "a"
-
 reverse("") //➞ "
+
+// A palindrome is a word that is identical forward and backwards.
+
+// mom
+// racecar
+// kayak
+// Given a word, create a function that checks whether it is a palindrome.
+
+function checkPalindrome(str) {
+	return str.split('').reverse().join('') === str
+}
+checkPalindrome("mom") //➞ true
+checkPalindrome("scary") //➞ false
+checkPalindrome("reviver") //➞ true
+checkPalindrome("stressed") //➞ false
+
+// Write a function that returns 0 if the input is 1, and returns 1 if the input is 0.
+function flip(y) {
+	return Math.abs(y-1)
+}
+flip(1); //➞ 0
+flip(0); //➞ 1
+
+// Given a sorted array of numbers, remove any numbers that are divisible by 13. Return the amended array.
+
+function unlucky13(nums) {
+	return nums.filter(x => x % 13)
+}
+
+unlucky13([53, 182, 435, 591, 637]) //➞ [53, 435, 591]
+// 182 and 637 are divisible by 13.
+unlucky13([24, 316, 393, 458, 1279]) //➞ [24, 316, 393, 458, 1279]
+// No numbers in the array are divisible by 13.
+unlucky13([104, 351, 455, 806, 871]) //➞ []
+// All numbers in the array are divisible by 13.
+
+// Create a function that adds a string ending to each member in an array.
+
+function addEnding(arr, ending) {
+    return arr.map(x => x+ending)	
+}
+
+addEnding(["clever", "meek", "hurried", "nice"], "ly");
+//➞ ["cleverly", "meekly", "hurriedly", "nicely"]
+addEnding(["new", "pander", "scoop"], "er")
+//➞ ["newer", "panderer", "scooper"]
+addEnding(["bend", "sharpen", "mean"], "ing")
+//➞ ["bending", "sharpening", "meaning"]
+
+// Write a function that returns true if all integers in an array are factors of a number, and false otherwise.
+
+function checkFactors(factors, num) {
+	
+}
+
+checkFactors([2, 3, 4], 12) //➞ true
+// Since 2, 3, and 4 are all factors of 12.
+
+checkFactors([1, 2, 3, 8], 12) //➞ false
+// 8 is not a factor of 12.
+
+checkFactors([1, 2, 50], 100) //➞ true
+
+checkFactors([3, 6], 9)// ➞ false
