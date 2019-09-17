@@ -9,13 +9,48 @@
 // sessionStorage.setItem("classroom","FbW15");
 // console.log(sessionStorage.getItem("classroom"));
 
+let basket = [];
+
 let addGiftObj= document.getElementById("addGift");
+let giftObj = document.getElementById("gift");
+
+giftObj.addEventListener("keyup",function(e){
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        addGiftObj.onclick();
+    }
+})
 addGiftObj.onclick = ()=>{
-    let giftObj = document.getElementById("gift");
+    //1. only items that have at least 3 characters can be added. otherwise, an error alert appears.
+
     let shoppingObj = document.getElementById("shopping");
     let newGiftObj = document.createElement('li');
-    newGiftObj.innerHTML= giftObj.value;    
-    shoppingObj.appendChild(newGiftObj)
+
+
+    // add item name and price to the basket array
+    let price = 5+ Math.floor(Math.random()* 95);
+
+    basket.push({
+        name : giftObj.value,
+        price : price
+    });
+
+    newGiftObj.insertAdjacentHTML("beforeend",`<span>${giftObj.value}</span>,<span>Price: ${price}</span>`)
+
+     // show alert message for added basket less then 3
+    let status=document.getElementById('statusMessage');
+    status.style.background="rgba(237, 68, 68, 0.79)"
+    // status.style.display='block';
+    if (giftObj.value.length < 3 && giftObj.value.length > 0) {
+        status.innerHTML="";
+        // color for gift input
+        giftObj.style.backgroundColor="rgba(219, 0, 0, 0.17)(236, 105, 105, 0.53)"
+        status.innerHTML=`${giftObj.value} is too short`;
+    }else{
+        shoppingObj.appendChild(newGiftObj)
+        giftObj.style.backgroundColor="white"
+    }
+        // after adding 
     giftObj.value = '';
 }
 
@@ -25,6 +60,7 @@ let removeLastGiftObj = document.getElementById('removeLastGift');
 removeLastGiftObj.onclick= () =>{
     let allGiftObj = document.querySelectorAll("#shopping > li");
     allGiftObj[[allGiftObj.length-1]].remove();
+    basket.pop()
 }
 
 
@@ -33,20 +69,27 @@ let removeFirstGistObj = document.getElementById("removeFirstGift");
 removeFirstGistObj.onclick = ()=>{
     let allGiftObj = document.querySelectorAll("#shopping > li");
     allGiftObj[0].remove()
+    basket.shift()
 }
 
-// remove first gift button click
+
+// remove gift button click
 let removeObj = document.getElementById("remove");
 removeObj.onclick=() =>{
+    
     let allGiftObj = document.querySelectorAll("#shopping > li");
     let texBoxGiftObj = document.getElementById('gift');
     let found = false;
+
     for (let i = 0; i < allGiftObj.length; i++) {
-        let deleteGift = allGiftObj[i].innerHTML;  
-        if (texBoxGiftObj.value.toLowerCase() === deleteGift.toLowerCase()) {
+        let deleteGift = allGiftObj[i].getElementsByTagName('span')[0].innerHTML;
+        // let deleteGift = allGiftObj[i].firstChild.innerHTML
+        if (texBoxGiftObj.value.trim().toLowerCase()=== deleteGift.trim().toLowerCase()){
             allGiftObj[i].remove();
             texBoxGiftObj.value='';
             found = true;
+            basket.splice(i,1);
+            break
         } 
     }
     if (!found) {
@@ -54,3 +97,38 @@ removeObj.onclick=() =>{
     }
 }
 
+
+
+//sum gift button click
+let sumObj = document.getElementById('sum');
+let sumTotal = document.getElementById("sumTotal");
+let articleSum = document.getElementById("articleSum")
+sumObj.onclick= ()=>{
+    let totalsum =0;
+    let articlesum = 0;
+    basket.filter(x => x.name.length > 2 ? articlesum+=1 :articlesum+=0 )
+    basket.reduce((acc,val)=>{
+        totalsum = acc + val.price
+        
+        return totalsum
+    },0);
+    
+     sumTotal.innerHTML="";
+
+     sumTotal.innerHTML=`the sum is: ${totalsum}`;
+     sumTotal.style.background="rgba(212, 243, 184, 0.69)";
+
+
+     articleSum.innerHTML="";
+     articleSum.innerHTML=`total article: ${articlesum}`;
+     articleSum.style.background="rgba(212, 243, 184, 0.69)";
+
+}
+
+sumObj.addEventListener('keyup',function (x) {
+    x.preventDefault();
+    if (x === 13) {
+        sumObj.onclick()
+    }
+
+})
