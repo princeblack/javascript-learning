@@ -39,7 +39,19 @@ saymynameObj.onclick=function () {
     }
 }
 
+//  add dynamic input type text
+let inputObj= document.createElement("input");
+inputObj.type= "text";
+inputObj.className="testClass";
+document.body.appendChild(inputObj)
 
+let divContainerObj = document.querySelector("#divContainer");
+let newHeading = document.createElement('h1');
+
+newHeading.innerHTML = "I am Heading from the backend - added dynamically";
+divContainerObj.insertAdjacentElement("afterbegin",newHeading);
+
+divContainerObj.insertAdjacentHTML("afterend", "<h3> I am here H3 testing</h3>")
 
 
 

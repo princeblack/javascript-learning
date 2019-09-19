@@ -52,6 +52,7 @@ addGiftObj.onclick = ()=>{
     }
         // after adding 
     giftObj.value = '';
+    sumObj.onclick()
 }
 
 
@@ -61,6 +62,7 @@ removeLastGiftObj.onclick= () =>{
     let allGiftObj = document.querySelectorAll("#shopping > li");
     allGiftObj[[allGiftObj.length-1]].remove();
     basket.pop()
+    sumObj.onclick()
 }
 
 
@@ -70,6 +72,7 @@ removeFirstGistObj.onclick = ()=>{
     let allGiftObj = document.querySelectorAll("#shopping > li");
     allGiftObj[0].remove()
     basket.shift()
+    sumObj.onclick()
 }
 
 
@@ -94,6 +97,7 @@ removeObj.onclick=() =>{
     }
     if (!found) {
         alert(`gift ${texBoxGiftObj.value} not found!`)
+        sumObj.onclick()
     }
 }
 
