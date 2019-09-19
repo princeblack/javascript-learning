@@ -1,0 +1,14 @@
+{
+  "name": "hellojoke",
+  "version": "1.0.0",
+  "description": "\"it's an app that say hello\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mahamadi",
+  "license": "ISC",
+  "dependencies": {
+    "give-me-a-joke": "^0.1.2"
+  }
+}
