@@ -39,7 +39,7 @@ addGiftObj.onclick = () => {
 
     // show alert message for added basket less then 3
     let status = document.getElementById('statusMessage');
-    status.style.background = "rgba(237, 68, 68, 0.79)"
+    status.style.background = "rgba(237, 68, 68, 0.79)";
     // status.style.display='block';
     if (giftObj.value.length < 3 && giftObj.value.length > 0) {
         status.innerHTML = "";
