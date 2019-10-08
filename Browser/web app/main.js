@@ -4,11 +4,12 @@ document.body.style.alignItems = "center";
 document.body.style.width = "100%";
 document.body.style.display = "flex";
 document.body.style.flexDirection = "column";
+
 //  top menu costum
 let topMenu = document.getElementById("top");
 topMenu.style.backgroundColor = "rgba(51,51,204,0.5)";
 topMenu.style.height = "50px";
-topMenu.style.width = "50%"
+topMenu.style.width = "50%";
 topMenu.style.display = "flex";
 topMenu.style.flexDirection = "row";
 topMenu.style.flexWrap = "wrap";
@@ -31,22 +32,24 @@ lineDiv.appendChild(line)
 
 // user table
 const tableDiv = document.getElementById("tableDiv");
-tableDiv.style.backgroundColor = "rgba(255,153,51,0.8)"
+tableDiv.style.backgroundColor = "rgba(255,153,519,0.8)"
 tableDiv.style.width = "50%";
 tableDiv.style.display = "flex";
 tableDiv.style.alignItems = "center";
 tableDiv.style.alignContent = "center";
 tableDiv.style.justifyContent = "space-around";
-tableDiv.style.justifyContent = "space-around";
 tableDiv.style.flexDirection = "row";
 tableDiv.style.flexWrap = "wrap";
 
+
+
 // user table id
 const tableId = document.getElementById("tableId");
-tableId.style.border = "solid 1px white";
-tableId.style.width = "95%";
-tableId.style.textAlign = "left";
 
+tableId.style.width = "80%";
+tableId.style.marginLeft = "9.5%";
+tableId.style.textAlign = "left";
+tableId.style.border = "9px solid white";
 
 let userInfoClik = document.getElementById("userInfo");
 userInfoClik.style.cursor = "pointer";
@@ -71,30 +74,26 @@ userInfoClik.onclick = () => {
 
 /************************************************************
  * **********************************************************
- * ****************costum commentair*************************
+ * ****************costum commentair table *************************
  * **********************************************************
  * **********************************************************/
 
 const commentTable = document.getElementById("commentTable");
-commentTable.style.backgroundColor = "rgba(255,153,51,0.8)"
+commentTable.style.backgroundColor = "rgba(255,153,519,0.8)"
 commentTable.style.width = "50%";
-commentTable.style.display = "flex";
-commentTable.style.alignItems = "center";
-commentTable.style.alignContent = "center";
-commentTable.style.justifyContent = "space-around";
-commentTable.style.justifyContent = "space-around";
-commentTable.style.flexDirection = "row";
-commentTable.style.flexWrap = "wrap";
+
 
 // user table id
 const tablcommenteId = document.getElementById("comment");
-comment.style.border = "solid 1px white";
-comment.style.width = "95%";
-comment.style.textAlign = "left";
+tablcommenteId.style.width = "80%";
+tablcommenteId.style.marginLeft = "9.5%";
+tablcommenteId.style.border = "9px solid white";
 
 let userComment = document.getElementById("userComment");
 userComment.style.cursor = "pointer";
 commentTable.style.display = "none";
+
+
 
 
 userComment.onclick = () => {
@@ -124,11 +123,8 @@ userComment.onclick = () => {
 const addUserTable = document.getElementById("addUserTable");
 addUserTable.style.backgroundColor = "rgba(255,153,51,0.8)"
 addUserTable.style.width = "50%";
-addUserTable.style.display = "flex";
-addUserTable.style.alignItems = "center";
-addUserTable.style.alignContent = "center";
-addUserTable.style.flexDirection = "column";
-// addUserTable.style.flexWrap="wrap";
+addUserTable.style.textAlign = "center";
+
 
 
 //  User name Input
@@ -201,44 +197,58 @@ addUser.onclick = () => {
  * **********************************************************/
 let namArray = [];
 let emailArray = [];
+let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 submitButton.onclick = () => {
 
     //  valide input and change the value of email and name
-    if (emailInput.value !== '' && nameInput.value !== '' && emailInput.value.includes("@")) {
-
+    if (re.test(emailInput.value) && nameInput !== '') {
         /************************************************************
         * *******************All Users data ************************
         * **********************************************************/
-        // add User table info
-        let userInfoTr = document.createElement("tr")
-        tableId.appendChild(userInfoTr);
 
-        //  User Name info
-        let userNameTD = document.createElement("td");
-        userInfoTr.appendChild(userNameTD);
+        // for (let i = 0; i <= emailArray.length; i++) {
+        if (emailArray.indexOf(emailInput.value) == -1) {
+            namArray.push(nameInput.value);
+            emailArray.push(emailInput.value);
+            // add User table info
+            let userInfoTr = document.createElement("tr")
+            tableId.appendChild(userInfoTr);
+            userInfoTr.style.backgroundColor = "white";
 
-        //  User Email  info
-        let userEmailTd = document.createElement("td");
-        userInfoTr.appendChild(userEmailTd);
+            //  User Name info
+            let userNameTD = document.createElement("td");
+            userNameTD.style.overflowWrap="break-word";
+            userNameTD.style.wordBreak="break-all";
+            userInfoTr.appendChild(userNameTD);
 
-        // user Id info
-        let userIdTd = document.createElement("td");
-        userInfoTr.appendChild(userIdTd);
+            //  User Email  info
+            let userEmailTd = document.createElement("td");
+            userEmailTd.style.overflowWrap="break-word";
+            userEmailTd.style.wordBreak="break-all";
+            userInfoTr.appendChild(userEmailTd);
 
-        userNameTD.innerHTML = `${nameInput.value}`;
-        userEmailTd.innerHTML = `${emailInput.value}`;
-        userIdTd.innerHTML = `${Math.floor(Math.random() * 10)}`;
-        namArray.push(nameInput.value);
-        emailArray.push(emailInput.value);
+            // user Id info
+            let userIdTd = document.createElement("td");
+            userIdTd.style.overflowWrap="break-word";
+            userIdTd.style.wordBreak="break-all";
+            userInfoTr.appendChild(userIdTd);
+
+
+            //  now give the value to User Name ,User Email and user Id info
+            userNameTD.innerHTML = `${nameInput.value}`;
+            userEmailTd.innerHTML = `${emailInput.value}`;
+            userIdTd.innerHTML = `${emailArray.indexOf(emailInput.value) + 1}`;
+
+        } else if (emailArray.indexOf(emailInput.value) > -1) {
+            alert(`${emailInput.value} is Already registered `)
+        }
     } else {
+        alert(`${emailInput.value} is not a valid email`);
         alert("Please fill out all fields.");
     }
     emailInput.value = '';
     nameInput.value = '';
-    console.log(namArray);
-    console.log(namArray.length);
-    console.log(emailArray);
-    console.log(emailArray.length);
 }
 
 
@@ -247,7 +257,7 @@ submitButton.onclick = () => {
 
 /************************************************************
  * **********************************************************
- * ****************costum  Add Comment **********************
+ * ****************costum  Add user Comment **********************
  * **********************************************************
  * **********************************************************/
 let addComment = document.getElementById("addComment");
@@ -256,12 +266,8 @@ addComment.style.cursor = ("pointer");
 let addCommentTable = document.getElementById("addCommentTable");
 addCommentTable.style.backgroundColor = "rgba(255,153,51,0.8)"
 addCommentTable.style.width = "50%";
-addCommentTable.style.display = "flex";
-addCommentTable.style.flexDirection = "column";
-addCommentTable.style.justifyItems = "center";
-addCommentTable.style.alignContent = "center";
-addCommentTable.style.alignItems = "center";
-addCommentTable.style.flexWrap = "nowrap";
+addCommentTable.style.textAlign = "center";
+
 
 
 let userCommentName = document.createElement("input");
@@ -290,7 +296,11 @@ addCommentTable.appendChild(x);
 let userTextarea = document.createElement("textarea");
 userTextarea.style.border = "solid 3px rgba(51,51,204,0.5)";
 userTextarea.style.margin = "5px";
-userTextarea.style.height = "150px"
+userTextarea.style.height = "80px"
+userTextarea.maxLength = "100";
+userTextarea.style.wordBreak = "break-all";
+userTextarea.style.overflowWrap="break-word";
+
 addCommentTable.appendChild(userTextarea);
 
 var x = document.createElement("BR");
@@ -315,8 +325,6 @@ addComment.onclick = () => {
     tableDiv.style.display = "none";
     addUserTable.style.display = "none";
     commentTable.style.display = "none";
-    addCommentTable.style.display = "flex";
-    addCommentTable.style.flexDirection = "column";
     if (addComment.innerHTML.toLowerCase() == "add comment") {
         addCommentTable.style.display = "block";
         addComment.innerHTML = "Hide Add Comment";
@@ -330,44 +338,110 @@ addComment.onclick = () => {
     }
 }
 
-commentSubmit.onclick = () => {
-    /************************************************************
+/************************************************************
  * *******************All Users comments ************************
  * **********************************************************/
-    // add User table info
-    let commentInfoTr = document.createElement("tr")
-    tablcommenteId.appendChild(commentInfoTr);
+commentSubmit.onclick = () => {
 
-    //  comment Name info
-    let commentName = document.createElement("td");
-    commentInfoTr.appendChild(commentName);
+    if (re.test(userCommentEmail.value) && userCommentName.value !== '') {
+        // add User table info
+        let commentInfoTr = document.createElement("tr");
+        commentInfoTr.style.backgroundColor = "white";
+        commentInfoTr.style.border="solid 5px green"
+        commentInfoTr.style.width="100%"
+        tablcommenteId.appendChild(commentInfoTr);
 
-    //  comment Email  info
-    let commentEmailTd = document.createElement("td");
-    commentInfoTr.appendChild(commentEmailTd);
-
-    // comment Id info
-    let commentIdTd = document.createElement("td");
-    commentInfoTr.appendChild(commentIdTd)
-
-    if (userCommentEmail.value !== '' && userCommentName.value!== '' && userCommentEmail.value.includes('@')) {
-        for (let i = 0; i < namArray.length; i++) {
-            if (userCommentName.value == namArray[i] ) {
-                for (let i = 0; i < emailArray.length; i++) {
-                    if (userCommentEmail.value == emailArray[i]) {
-                        commentEmailTd.innerHTML = `${userCommentEmail.value}`;
-                        commentName.innerHTML = `${userCommentName.value}`;
-                    }else{
-                        alert(`Sorry ${userCommentEmail.value} is not register please try again`)
-                    }            
-                }
-            } else {
-                alert(`Sorry ${userCommentName.value} is not User please try again`)
-            }            
+        //  get all user index in the namArray
+        let indicesName = [];
+        let idxName = namArray.indexOf(userCommentName.value);
+        let idxEmail = emailArray.indexOf(userCommentEmail.value);
+        while (idxName != -1) {
+            indicesName.push(idxName)
+            idxName = namArray.indexOf(userCommentName.value, idxName + 1)
         }
-        if (commentName.innerHTML == `${userCommentName.value}` && commentEmailTd.innerHTML == `${userCommentEmail.value}`)  {
+
+        //  valid de comment 
+        if (indicesName.includes(idxEmail)) {
+
+            //  comment Name info
+            let commentName = document.createElement("td");
+            commentInfoTr.appendChild(commentName);
+            commentName.style.maxWidth="20%";
+            commentName.style.minWidth="20%";
+            commentName.style.overflowWrap="break-word";
+            commentName.style.wordBreak="break-all";
+            commentName.style.resize="none";
+
+            //  comment Email  info
+            let commentEmailTd = document.createElement("td");
+            commentInfoTr.appendChild(commentEmailTd);
+            commentEmailTd.style.maxWidth="30%";
+            commentEmailTd.style.minWidth = "30%";
+            commentEmailTd.style.overflowWrap="break-word";
+            commentEmailTd.style.wordBreak="break-all";        
+
+            // comment Id info
+            let commentIdTd = document.createElement("td");
+            commentInfoTr.appendChild(commentIdTd);
+            commentIdTd.style.maxWidth = "100px";
+            commentIdTd.style.maxHeight= "150px";
+            commentIdTd.style.overflowWrap="break-word";
+            commentIdTd.style.wordBreak="break-all";
+            commentIdTd.maxLength = "100";
+            commentIdTd.readOnly = "true";
+            commentIdTd.style.resize="both";
+
+
+            // delete comment info and user info
+            let deletcomment = document.createElement("td");
+            deletcomment.style.maxWidth="10%";
+            commentInfoTr.appendChild(deletcomment);
+            
+            let deletcommentbutton = document.createElement("button");
+            deletcommentbutton.style.maxWidth="100%";
+            deletcommentbutton.style.minWidth="100%";
+
+            deletcommentbutton.innerHTML="Remove";
+            deletcomment.appendChild(deletcommentbutton)
+
+            //  edite user comment
+            let editcomment = document.createElement("button");
+            editcomment.style.maxWidth="100%";
+            editcomment.style.minWidth="100%";
+
+            editcomment.innerHTML = "edite";
+            deletcomment.appendChild(editcomment)
+
+            commentEmailTd.innerHTML = `${userCommentEmail.value}`;
+            commentName.innerHTML = `${userCommentName.value}`;
             commentIdTd.innerHTML = `${userTextarea.value}`;
+
+            deletcommentbutton.onclick = () => {
+                commentName.remove();
+                commentEmailTd.remove();
+                commentIdTd.remove();
+                deletcomment.remove();
+                editcomment.remove();
+            }
+
+            editcomment.onclick = () => {
+                if (commentEmailTd.contentEditable == "true") {
+                    commentEmailTd.contentEditable="false";
+                    commentIdTd.contentEditable = "false";
+                    commentName.contentEditable="false";
+                    editcomment.innerHTML="reading";
+                }else {
+                    editcomment.innerHTML="edite";
+                    commentEmailTd.contentEditable="true";
+                    commentIdTd.contentEditable = "true";
+                    commentName.contentEditable="true";
+                }
+            }
+        } else if (indicesName.includes(idxEmail) === false) {
+            alert(`${userCommentName.value}  or  ${userCommentEmail.value} is not valid`)
         }
+    } else {
+        alert("data not Valid")
     }
     userCommentEmail.value = '';
     userCommentName.value = '';

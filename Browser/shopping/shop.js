@@ -40,9 +40,11 @@ addGiftObj.onclick = () => {
     // show alert message for added basket less then 3
     let status = document.getElementById('statusMessage');
     status.style.background = "rgba(237, 68, 68, 0.79)";
+
     // status.style.display='block';
     if (giftObj.value.length < 3 && giftObj.value.length > 0) {
         status.innerHTML = "";
+        
         // color for gift input
         giftObj.style.backgroundColor = "rgba(219, 0, 0, 0.17)(236, 105, 105, 0.53)"
         status.innerHTML = `${giftObj.value} is too short`;
