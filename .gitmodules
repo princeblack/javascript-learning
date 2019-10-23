@@ -1,0 +1,9 @@
+[submodule "nodejs/dictionary-cli"]
+	path = nodejs/dictionary-cli
+	url = /nodejs/dictionary-cli
+[submodule "nodejs/find-word"]
+	path = nodejs/find-word
+	url = /nodejs/find-word
+[submodule "nodejs/weather-cli"]
+	path = nodejs/weather-cli
+	url = /nodejs/weather-cli
