@@ -1,0 +1,11 @@
+{
+  "name": "print",
+  "version": "1.0.0",
+  "description": "'printing number and tring'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mahamadi congo",
+  "license": "ISC"
+}
