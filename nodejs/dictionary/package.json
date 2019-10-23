@@ -1,0 +1,22 @@
+{
+  "name": "dictionary-cli",
+  "version": "1.0.0",
+  "description": "## Instructions for students:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dciberlin/dictionary-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dciberlin/dictionary-cli/issues"
+  },
+  "homepage": "https://github.com/dciberlin/dictionary-cli#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
