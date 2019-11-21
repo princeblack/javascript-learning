@@ -1,0 +1,40 @@
+table,
+th,
+td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.indent {
+  padding: 2px 8px;
+  margin: 2px 8px;
+}
+.even-row {
+  background-color: blue;
+}
+.odd-row {
+  background-color: yellow;
+}
+.highlight1 {
+  background-color: darkcyan;
+}
+.highlight2 {
+  font-weight: bold;
+  color: darkgoldenrod;
+}
+.red-color {
+  color: red;
+}
+.blue-color {
+  color: cornflowerblue;
+}
+.green-color {
+  color: seagreen;
+}
+.border {
+  padding: 10px;
+  border: solid 1px seagreen;
+}
+.underline {
+  text-decoration: underline;
+}
